@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
     <head>
-        <header style="border: double; font-size:120px; text-align:center; font-family: fantasy; color:aliceblue; letter-spacing: 3px;"><b>CZEMU BAZGROŁY?</b></header>
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Czemu bazgroły?</title> 
     </head>
-    <body style="background-image: url(sana.jpg); color:white;">
-        <h1 style="text-align: center; text-decoration: double;"><i>bazgroły w gruncie rzeczy nie służą niczemu, ale można je zauważyć na wielu powierchniach miejskich</i></h1>
+    <body style="background-image: url(sana.jpg); color:white;"
+    id="strona">
+    <div style="
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    "></div>
+    <header style="border: double; font-size:120px; text-align:center; font-family: fantasy; color:aliceblue; letter-spacing: 3px;"><b>CZEMU BAZGROŁY?</b></header>
+    <button
+    id="przelacznik"
+    onclick="zmienMotyw()"
+    style="position: fixed; top: 20px; right: 20px; cursor: pointer; padding: 10px 3px; font-family: 'Courier New', monospace; letter-spacing: 0.1em;">MOTYW</button>
+        <h1 style="text-align: center; text-decoration: double;"><br><i>bazgroły w gruncie rzeczy nie służą niczemu, ale można je zauważyć na wielu powierchniach miejskich</i></h1>
         <h2><b>Do najpopularniejszych należą:</b></h2>
         <ol>
             <li>Pociągi, w tym</li>
@@ -16,12 +30,12 @@
             <li>skrzynki elektroniczne / wodociągowe</li>
             <li>różnej maści słupy i kolumny</li>
         </ol>
-        <h2><b>warto też wiedzieć, jakie są popularne narzędzia sprawców bazgrołów, oraz jakie marki je produkują</b></h2>
-        <table style="background-color: white; color:black; align-self: center;" width="60%">
+        <h2 style="text-align: center"><b>warto też wiedzieć, jakie są popularne narzędzia sprawców bazgrołów, oraz jakie marki je produkują</b></h2>
+        <table style=" border-collapse: collapse; background-color: rgb(207, 210, 210); color:black;" width="100%; border: 3px solid #ffffff;">
             <tr>
-                <th>Markery</th>
-                <th>Farby w puszce</th>
-                <th>tusze i farby do markerów</th>
+                <th style="padding: 12px 16px; text-align: left; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-align: left;"><b>Markery</b></th>
+                <th style="padding: 12px 16px; text-align: left; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-align: left;"><b>Farby w puszce</b></th>
+                <th style="padding: 12px 16px; text-align: left; font-family: 'Courier New', monospace; letter-spacing: 0.1em; text-align: left;"><b>tusze i farby do markerów</b></th>
             </tr>
             <tr>
                 <td>Grog</td>
@@ -48,5 +62,31 @@
         <footer>
             <p title="autor strony"><u>Nie podam imienia, a za bazgrołami w sumie nie przepadam</u></p>
         </footer>
+        <script>
+          let aktywnyMotyw = "czarny";
+          
+          function zmienMotyw() {
+            let strona = document.getElementById("strona");
+            let btn = document.getElementById("przelacznik");
+
+            if (aktywnyMotyw === "czarny") {
+                strona.style.backgroundColor = "#FFD700";
+                strona.style.color = "#FFFFFF";
+                btn.style.backgroundColor = "#E4DD9D";
+                btn.style.color = "#E4DD9D";
+                btn.style.borderColor = "#E4DD9D";
+                btn.innerHTML = "🟡 ŻÓŁTY";
+                aktywnyMotyw = "zolty";
+            } else {
+                strona.style.backgroundColor = "#000000";
+                strona.style.color = "#FFFFFF";
+                btn.style.backgroundColor = "#FFFFFF";
+                btn.style.color = "#000000";
+                btn.style.borderColor = "#FFFFFF";
+                btn.innerHTML = "⚫ CZARNY";
+                aktywnyMotyw = "czarny";
+            }
+            }
+        </script>
     </body>
 </html>
