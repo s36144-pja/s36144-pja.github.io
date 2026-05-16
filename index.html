@@ -3,21 +3,60 @@
     <head>
        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Czemu bazgroły?</title> 
+        <title>Czemu bazgroły?</title>
+        
+        <style>
+  .btn-klasyczny {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  .btn-klasyczny:hover {
+    background-color: white;
+    color: black;
+  }
+
+ 
+  .btn-neon {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+
+  .btn-neon:hover {
+    box-shadow: 0 0 8px white, 0 0 20px white;
+    border-color: white;
+  }
+
+  .btn-neon:active {
+    box-shadow: 0 0 4px white, 0 0 8px white;
+  }
+        </style>
     </head>
     <body style="background-image: url(sana.jpg); color:white;"
     id="strona">
-    <div style="
+    <div id="overlay" style="
         position: fixed;
         inset: 0;
         background-color: rgba(0, 0, 0, 0.7);
         z-index: -1;
     "></div>
-    <header style="border: double; font-size:120px; text-align:center; font-family: fantasy; color:aliceblue; letter-spacing: 3px;"><b>CZEMU BAZGROŁY?</b></header>
-    <button
-    id="przelacznik"
-    onclick="zmienMotyw()"
-    style="position: fixed; top: 20px; right: 20px; cursor: pointer; padding: 10px 3px; font-family: 'Courier New', monospace; letter-spacing: 0.1em;">MOTYW</button>
+    <header id="gora" style="border: double; font-size:120px; text-align:center; font-family: fantasy; color:aliceblue; letter-spacing: 3px;"><b>CZEMU BAZGROŁY?</b></header>
+    <nav style="text-align: center; padding: 16px 0;">
+  <a href="index.html" style="color: white; text-decoration: none; margin: 0 20px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; font-size: 1.1rem;">Strona główna</a>
+  <a href="narzedzia.html" style="color: white; text-decoration: none; margin: 0 20px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; font-size: 1.1rem;">Narzędzia</a>
+</nav>
+<button id="przelacznik" onclick="zmienMotyw()" class="btn-neon">MOTYW</button>
+<main>
         <h1 style="text-align: center; text-decoration: double;"><br><i>bazgroły w gruncie rzeczy nie służą niczemu, ale można je zauważyć na wielu powierchniach miejskich</i></h1>
         <h2><b>Do najpopularniejszych należą:</b></h2>
         <ol>
@@ -59,34 +98,30 @@
         width="881" height="1200">
         <br>
         <img src="https://th.bing.com/th/id/R.ee9d49383430817d55d21a3d25f7c200?rik=kponE5b6PJVDQQ&riu=http%3a%2f%2fnews.bbc.co.uk%2fnol%2fshared%2fspl%2fhi%2fpop_ups%2f08%2fuk_graffiti%2fimg%2f4.jpg&ehk=8d%2bHPQv3N3uMQO%2bpA%2fwFkltb3itQSJ4YEOVDdgWO8v8%3d&risl=&pid=ImgRaw&r=0">
+       <button class="btn-klasyczny" onclick="location.href='#gora'">Wróć do góry</button>
         <footer>
             <p title="autor strony"><u>Nie podam imienia, a za bazgrołami w sumie nie przepadam</u></p>
         </footer>
-        <script>
-          let aktywnyMotyw = "czarny";
-          
-          function zmienMotyw() {
-            let strona = document.getElementById("strona");
-            let btn = document.getElementById("przelacznik");
+        </main>
+      <script>
+let aktywnyMotyw = "czarny";
 
-            if (aktywnyMotyw === "czarny") {
-                strona.style.backgroundColor = "#FFD700";
-                strona.style.color = "#FFFFFF";
-                btn.style.backgroundColor = "#E4DD9D";
-                btn.style.color = "#E4DD9D";
-                btn.style.borderColor = "#E4DD9D";
-                btn.innerHTML = "🟡 ŻÓŁTY";
-                aktywnyMotyw = "zolty";
-            } else {
-                strona.style.backgroundColor = "#000000";
-                strona.style.color = "#FFFFFF";
-                btn.style.backgroundColor = "#FFFFFF";
-                btn.style.color = "#000000";
-                btn.style.borderColor = "#FFFFFF";
-                btn.innerHTML = "⚫ CZARNY";
-                aktywnyMotyw = "czarny";
-            }
-            }
-        </script>
+function zmienMotyw() {
+    let overlay = document.getElementById("overlay");
+    let btn = document.getElementById("przelacznik");
+
+    if (aktywnyMotyw === "czarny") {
+        overlay.style.backgroundColor = "rgba(140, 0, 0, 0.90)";
+        btn.innerHTML = "🔴 CZERWONY";
+        aktywnyMotyw = "czerwony";
+    } else {
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        btn.innerHTML = "⚫ CZARNY";
+        aktywnyMotyw = "czarny";
+    }
+}
+    </script>
+  </body>
+</html>  
     </body>
 </html>
