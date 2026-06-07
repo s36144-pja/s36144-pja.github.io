@@ -8,19 +8,97 @@
     <body id="strona">
     <div id="overlay"></div>
 
-    <header id="gora">JAK BAZGROŁY?</header>
-
-    <nav>
-        <a href="index.html">Strona główna</a>
-        <a href="narzedzia.html">Narzędzia</a>
-        <a href="rodzaje.html">style</a>
-    </nav>
-
+   <header id="gora"><span class="header-zmiana">JAK</span> BAZGROŁY?</header>
+    <nav style="text-align: center; padding: 16px 0;">
+  <a href="index.html" style="color: white; text-decoration: none; margin: 0 20px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; font-size: 1.1rem;">Strona główna</a>
+  <a href="narzedzia.html" style="color: white; text-decoration: none; margin: 0 20px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; font-size: 1.1rem;">Narzędzia</a>
+   <a href="rodzaje.html" style="color: white; text-decoration: none; margin: 0 20px; font-family: 'Courier New', monospace; letter-spacing: 0.1em; font-size: 1.1rem;">Style</a>
+</nav>
+<h1>Bazgroły dla niewyczulonego oka mogą wydawać się chaotyczne i wolne od formy. Prawda jest taka, że wiąże je dość uporządkowana kultura, z której wyłoniły się określone style i rodzaje tworzenia najróżniejszych bazgrołów.</h1>
     <main>
         <section class="styl-sekcja">
             <h2>Wrzuty</h2>
-            <p>Wrzuty- każdy je widział i to one stanowią niekiedy </p>
+            <p>Wrzuty- każdy je widział i to one stanowią niekiedy symbol kultury bazgrołów. W tej formie zawierają one zwykle najwiecej kolorów i popisowych elementów stylu autora. Wrzuty są tą formą, w którą zwykło się wlewać najwięcej czasu, wysiłku i pomysłowości.</p>
+            <div class="galeria">
+                <img src="wrzut1.jpg" alt="MERD (Warszawa)" class="galeria-img ">
+                <img src="wrzut2.jpg" alt="OKSE (Lublin)" class="galeria-img ">
+                <img src="wrzut3.jpg" alt="ELROI (Warszawa Służewiec)" class="galeria-img ">
+            </div>
+        </section>
+
+        <section class="styl-sekcja">
+            <h2>"Charactery"</h2>
+            <p>"Character" w kulturze bazgrołów to termin nazywający stworzoną postać. Słowo to domyślnie oznacza stylizowaną, lub nawet karykaturalną postać/twarz, która stanowi dodatek do rozpoznwalności twórcy, choć niektórzy tworzą też wyłącznie charactery.</p>
+            <div class="galeria">
+                <img src="char1.jpg" alt="(Warszawa Bródno)" class="galeria-img ">
+                <img src="char2.jpg" alt="(Warszawa Ursynów)" class="galeria-img ">
+                <img src="char3.jpg" alt="(Warszawa Powsin)" class="galeria-img ">
+            </div>
+        </section>
+
+        <section class="styl-sekcja">
+            <h2>Chromy</h2>
+            <p> Chrom sam w sobie oznacza, że litery wypełniono srebrną farbą. W praktyce jednak chrom bywa potoczną nazwą na style wykonane pod presją czasu, a zatem i prostsze i lubianego, srebrnego koloru.</p>
+            <div class="galeria">
+                <img src="chrom1.jpeg" alt="MAMA (Warszawa Służew)" class="galeria-img ">
+                <img src="chrom2.jpg" alt="MENAK (Warszawa Mokotów)" class="galeria-img ">
+                <img src="chrome3.jpg" alt="GESER (USA)" class="galeria-img ">
+            </div>
+        </section>
+
+        <section class="styl-sekcja">
+            <h2>Throw-upy</h2>
+            <p>Throw-upy to szybka, prosta forma bazgrołów, którą można rozpoznać po krągłych kształtach liter, które składają się z 2 elementów- wypełnienia i obrysu. Są one także często wybieraną formą gdy twórce goni czas.</p>
+            <div class="galeria">
+                <img src="throw1.jpg" alt="MENAK (Warszawa)" class="galeria-img ">
+                <img src="throw2.jpg" alt="MENAK (Warszawa Gocław)" class="galeria-img ">
+                <img src="throw3.jpg" alt="MENAK (Warszawa)" class="galeria-img ">
+            </div>
+        </section>
+
+        <section class="styl-sekcja">
+            <h2>Tagi</h2>
+            <p>Tagi to najprostsza, i przez to najliczniejsza forma bazgrołów. Jest ona stylizowaną przez twórcę formą pisma ręcznego, choć może powstać z pomocą najróżniejszych narzędzi. Przez jej prostą formę zwykłe napisy w przestrzeni publicznej również bywają widziane jako bazgroły, bądź właśnie tagi.</p>
+            <div class="galeria">
+                <img src="tag1.jpg" alt="przykład tagów tworzonych farbą" class="galeria-img ">
+                <img src="tag2.jpg" alt="typowy 'zakątek' zapełniony różnego typu tagami" class="galeria-img ">
+                <img src="tag3.jpg" alt="przykład taga tworzonego farbą" class="galeria-img ">
+            </div>
         </section>
     </main>
+
+    <div id="lightbox">
+        <span id="lightbox-zamknij">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-opis"></p>
+    </div>
+
+    <footer>
+        <p>Paweł Jabłoński s36144</p>
+    </footer>
+
+    <script>
+        const obrazki = document.querySelectorAll('.galeria-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxOpis = document.getElementById('lightbox-opis');
+        const zamknij = document.getElementById('lightbox-zamknij');
+       
+        obrazki.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxOpis.textContent = img.alt;
+                lightbox.classList.add('aktywny');
+            });
+        });
+        zamknij.addEventListener('click', () => {
+            lightbox.classList.remove('aktywny');
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('aktywny');
+            }
+        });
+    </script>
     </body>
 </html>

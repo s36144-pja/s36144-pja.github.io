@@ -1,3 +1,63 @@
+#strona {
+    background-image: url(sana.jpg);
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* nawigacja*/
+nav{
+    text-align:center;
+    padding: 16px 0;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+/*tabelka bez wafelka*/
+
+table {
+    border-collapse: collapse;
+    background-color: rgb(207, 210, 210);
+    color: black;
+    width: 100%;
+    border: 3px solid black;
+}
+th {
+   padding: 12px 16px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    font-weight: bold; 
+}
+.svg-bazgroly {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    border-radius: 6px;
+}
+
+/*guziczki==========================*/
 .btn-klasyczny {
     background-color: transparent;
     color: white;
@@ -6,6 +66,8 @@
     font-family: 'Courier New', monospace;
     letter-spacing: 0.1em;
     cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
 
 .btn-klasyczny:hover {
@@ -35,46 +97,55 @@ footer {
     padding: 20px;
     margin-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
-    font-family: 'Courier New', monospace bold;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 1);
 }
 
-/* ========================
-   podstronka style jak bazgroly
-   ======================== */
+/*podstronka style jak bazgroly==============================*/
 
-.styl-sekcja {
-    margin: 40px 0;
-    padding: 20px;
-    border-left: 3px solid rgba(255, 255, 255, 0.4);
+
+#gora {
+    border: double;
+    font-size: 120px;
+    text-align: center;
+    font-family: Impact, sans-serif;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+.header-zmiana {
+    color:cornflowerblue;
 }
 
 .styl-sekcja h2 {
-    font-family: 'Courier New', monospace;
+    font-family: 'Impact', sans-serif;
     font-size: 2rem;
     letter-spacing: 0.1em;
     margin-bottom: 10px;
+    text-align: center;
+    font-weight: normal;
 }
 
-.styl-sekcja h3 {
-    font-family: 'Courier New', monospace;
-    font-size: 1.3rem;
-    margin-top: 30px;
-    color: rgba(255, 255, 255, 0.7);
+.styl-sekcja p {
+    text-align: center;
 }
+
+
 
 .galeria {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 16px;
+    justify-content: center;
 }
 
 .galeria-img {
-    width: 200px;
-    height: 150px;
+    width: 300px;
+    height: 220px;
     object-fit: cover;
     cursor: pointer;
     border: 2px solid rgba(255, 255, 255, 0.3);
