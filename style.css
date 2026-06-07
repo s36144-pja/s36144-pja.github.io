@@ -40,3 +40,90 @@ footer {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 1);
 }
+
+/* ========================
+   podstronka style jak bazgroly
+   ======================== */
+
+.styl-sekcja {
+    margin: 40px 0;
+    padding: 20px;
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.styl-sekcja h2 {
+    font-family: 'Courier New', monospace;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.styl-sekcja h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.galeria {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.galeria-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.galeria-img:hover {
+    border-color: white;
+    transform: scale(1.03);
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#lightbox.aktywny {
+    display: flex;
+}
+
+#lightbox-img {
+    max-width: 85vw;
+    max-height: 75vh;
+    border: 2px solid white;
+}
+
+#lightbox-opis {
+    margin-top: 16px;
+    font-family: 'Courier New', monospace;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+#lightbox-zamknij {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+    line-height: 1;
+}
+
+#lightbox-zamknij:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
