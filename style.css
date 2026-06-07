@@ -1,0 +1,42 @@
+.btn-klasyczny {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.btn-klasyczny:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-neon {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+.btn-neon:hover {
+    box-shadow: 0 0 8px white, 0 0 20px white;
+}
+
+.btn-neon:active {
+    box-shadow: 0 0 4px white, 0 0 8px white;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: 'Courier New', monospace bold;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 1);
+}
