@@ -28,11 +28,7 @@ nav a:hover {
 }
 
 
-.svg-bazgroly {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-}
+
 h1 {
     text-align: center;
     font-style: italic;
@@ -230,4 +226,46 @@ footer {
 
 #lightbox-zamknij:hover {
     color: rgba(255, 255, 255, 0.6);
+}
+
+/* PODSTRONA NARZEDZIA TOOLS2222222*/
+
+.narzedzie {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: center;
+}
+
+.narzedzie-img {
+    width: 40%;
+    height: auto;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.narzedzie-opis {
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+}
+
+.narzedzie-opis h2 {
+    font-family: Impact, sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.narzedzie-opis p {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
 }
